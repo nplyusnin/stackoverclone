@@ -36,3 +36,4 @@
 
 # Ignore local files for development
 /config/database.yml
+/docker-compose.yml
