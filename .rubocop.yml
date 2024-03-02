@@ -9,8 +9,7 @@ AllCops:
   TargetRubyVersion: 3.3.0
 
 Naming/FileName:
-  exlucde:
-    - Gemfile
+  enabled: false
 
 Style/StringLiterals:
   Enabled: true
