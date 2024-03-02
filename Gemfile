@@ -50,19 +50,22 @@ group :development do
   gem "web-console"
 
   # Ruby linter/formatter [https://github.com/rubocop/rubocop]
-  gem "rubocop"
+  gem "rubocop", require: false
 
   # Rubocop plugin for supports factory_bot gem [https://github.com/rubocop/rubocop-factory_bot]
-  gem "rubocop-factory_bot"
+  gem "rubocop-factory_bot", require: false
 
   # Rubocop plugin for supports rails [https://github.com/rubocop/rubocop-rails]
-  gem "rubocop-rails"
+  gem "rubocop-rails", require: false
 
   # Rubocop plugin for supports rspec [https://github.com/rubocop/rubocop-rspec]
-  gem "rubocop-rspec"
+  gem "rubocop-rspec", require: false
 
   # Rubocop plugin for support capybara [https://github.com/rubocop/rubocop-capybara]
-  gem "rubocop-capybara"
+  gem "rubocop-capybara", require: false
+
+  # Ruby-lsp
+  gem "ruby-lsp", require: false
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
