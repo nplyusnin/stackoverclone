@@ -1,0 +1,10 @@
+<h1>Questions</h1>
+
+<% @questions.each do |question| %>
+  <div id="<%= dom_id(question) %>">
+    <%= link_to question.title, '#' %>
+    <hr>
+    <%= link_to 'Edit', edit_question_path(question) %>
+    <%= link_to 'Destroy', question_path(question), data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+  </div>
+<% end %>

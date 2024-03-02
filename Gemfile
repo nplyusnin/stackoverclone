@@ -46,6 +46,9 @@ gem "devise"
 # Localization devise [https://github.com/tigrish/devise-i18n]
 gem "devise-i18n"
 
+# Syntax sugar for initialize objects [https://dry-rb.org/gems/dry-initializer]
+gem "dry-initializer"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
@@ -76,6 +79,13 @@ group :development do
   # Rubocop plugin for support capybara [https://github.com/rubocop/rubocop-capybara]
   gem "rubocop-capybara", require: false
 
+  # Testing web application by simulating a real user behavior [https://github.com/teamcapybara/capybara]
+  gem "capybara", require: false
+
+  # W3C WebDriver protocol to automate popular browsers [https://rubygems.org/gems/selenium-webdriver/versions/4.4.0]
+  # (capybara dependency)
+  gem "selenium-webdriver", require: false
+
   # Ruby-lsp
   gem "ruby-lsp", require: false
 
@@ -84,4 +94,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :test do
+  # Provides one-liners to test common Rails functionality [https://github.com/thoughtbot/shoulda-matchers]
+  gem "shoulda-matchers"
 end

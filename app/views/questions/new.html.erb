@@ -1,0 +1,23 @@
+<h1>Ask question</h1>
+
+<%= form_with(model: @question) do |f| %>
+  <% if f.object.errors.present? %>
+    <ul>
+      <% f.object.errors.each do |error| %>
+        <li><%= error.attribute.to_s %>:<%= error.message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <%= f.submit 'Ask' %>
+<% end %>

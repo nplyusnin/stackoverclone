@@ -9,7 +9,7 @@ AllCops:
   TargetRubyVersion: 3.3.0
 
 Naming/FileName:
-  enabled: false
+  Enabled: false
 
 Style/StringLiterals:
   Enabled: true
