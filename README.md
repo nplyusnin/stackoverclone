@@ -1,24 +1,37 @@
-# README
+# StackOverflow Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello! This is my pet project designed to showcase and refine my web development skills. It is a replica of the StackOverflow website, built using Ruby on Rails, PostgreSQL, and Hotwire.
 
-Things you may want to cover:
+## About the Project
 
-* Ruby version
+Users can ask questions, provide answers, vote on responses, and much more.
 
-* System dependencies
+## Technologies
 
-* Configuration
+- **Ruby on Rails**: Used for developing the server-side of the application.
+- **PostgreSQL**: A relational database for storing information about questions, answers, users, etc.
+- **Hotwire**: A framework for creating interactive web applications without page reloading.
 
-* Database creation
+## Installation
 
-* Database initialization
+```bash
+git clone https://github.com/nplyusnin/stackoverclone.git
+cd stackoverclone
+cp config/database.yml.sample config/database.yml
+cp docker-compose.yml.sample docker-compose.yml
+bundle install
+bundle exec rails db:setup
+bundle exec rails db:seed
+```
 
-* How to run the test suite
+## Running
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle exec rails s
+```
 
-* Deployment instructions
+## Running Tests
 
-* ...
+```bash
+bundle exec rspec spec
+```
