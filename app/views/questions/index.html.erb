@@ -1,10 +1,17 @@
 <h1>Questions</h1>
 
+<% if user_signed_in? %>
+  <%= link_to 'Ask', new_question_path %>
+<% end %>
+
 <% @questions.each do |question| %>
   <div id="<%= dom_id(question) %>">
     <%= link_to question.title, '#' %>
-    <hr>
-    <%= link_to 'Edit', edit_question_path(question) %>
-    <%= link_to 'Destroy', question_path(question), data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+
+    <% if user_signed_in? && question.user == current_user %>
+      <hr>
+      <%= link_to 'Edit', edit_question_path(question) %>
+      <%= link_to 'Destroy', question_path(question), data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+    <% end %>
   </div>
 <% end %>

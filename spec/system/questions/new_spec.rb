@@ -36,4 +36,12 @@ describe "questions#new" do
       end
     end
   end
+
+  context "when guest visit new question page" do
+    before { visit new_question_path }
+
+    it "redirects to sign_in page" do
+      expect(page).to have_current_path(new_user_session_path)
+    end
+  end
 end

@@ -13,5 +13,45 @@ describe "questions#index" do
         expect(page).to have_content(question.title)
       end
     end
+
+    it "not renders new question link" do
+      expect(page).to have_no_link("Ask")
+    end
+  end
+
+  context "when user as signed user visit questions path" do
+    let(:user) { create(:user) }
+    let!(:user_questions) { create_list(:question, 2, user:) }
+
+    before do
+      sign_in user
+      visit questions_path
+    end
+
+    it "renders list of questions" do
+      (questions + user_questions).each do |question|
+        expect(page).to have_content(question.title)
+      end
+    end
+
+    it "renders new question link" do
+      expect(page).to have_link("Ask")
+    end
+
+    it "renders actions links only for owned questions" do
+      questions.each do |question|
+        within "#question_#{question.id}" do
+          expect(page).to have_no_link("Edit")
+          expect(page).to have_no_link("Destroy")
+        end
+      end
+
+      user_questions.each do |question|
+        within "#question_#{question.id}" do
+          expect(page).to have_link("Edit")
+          expect(page).to have_link("Destroy")
+        end
+      end
+    end
   end
 end

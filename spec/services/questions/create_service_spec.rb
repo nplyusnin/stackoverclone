@@ -4,7 +4,7 @@ require "rails_helper"
 
 describe Questions::CreateService do
   describe "#call" do
-    subject(:called_service) { described_class.call(user, question_params) }
+    subject(:called_service) { described_class.call(question_params, user) }
 
     let(:user) { create(:user) }
 

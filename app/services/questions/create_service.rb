@@ -6,8 +6,8 @@ module Questions
 
     attr_reader :question
 
-    param :user
     param :question_params
+    param :user
     param :errors, default: proc { [] }
 
     def call

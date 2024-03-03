@@ -35,4 +35,25 @@ describe "questions#edit" do
       end
     end
   end
+
+  context "when user as not owner of question visit question edit path" do
+    let(:another_user) { create(:user) }
+
+    before do
+      sign_in another_user
+      visit edit_question_path(question)
+    end
+
+    it "redirects to questions path" do
+      expect(page).to have_current_path(questions_path)
+    end
+  end
+
+  context "when user as guest visit question edit path" do
+    before { visit edit_question_path(question) }
+
+    it "redirects to sign in path" do
+      expect(page).to have_current_path(new_user_session_path)
+    end
+  end
 end
