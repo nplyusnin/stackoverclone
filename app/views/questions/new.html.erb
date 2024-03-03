@@ -1,23 +1,10 @@
 <h1><%= t('questions.ask_your_question') %></h1>
 
-<%= form_with(model: @question) do |f| %>
-  <% if f.object.errors.present? %>
-    <ul>
-      <% f.object.errors.each do |error| %>
-        <li><%= error.attribute.to_s %>:<%= error.message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<%= simple_form_for(@question) do |f| %>
+  <%= f.error_notification %>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
+  <%= f.input :title %>
+  <%= f.input :content %>
 
   <%= f.submit t('questions.ask_question') %>
 <% end %>

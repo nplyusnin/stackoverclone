@@ -14,7 +14,7 @@ describe "questions#edit" do
 
     context "when user update question with valid params" do
       before do
-        fill_in "Title", with: "New question title"
+        fill_in t_input(:question, :title), with: "New question title"
         click_on t("save")
       end
 
@@ -26,7 +26,7 @@ describe "questions#edit" do
 
     context "when user update question with invalid params" do
       before do
-        fill_in "Title", with: " "
+        fill_in t_input(:question, :title), with: " "
         click_on t("save")
       end
 

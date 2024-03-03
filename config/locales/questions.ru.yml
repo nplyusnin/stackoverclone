@@ -4,3 +4,9 @@ ru:
     ask_your_question: 'Задайте свой вопрос'
     community_questions: 'Вопросы сообщества'
     edit_your_question: 'Редактирование вашего вопроса'
+
+  simple_form:
+    labels:
+      question:
+        title: 'Заголовок'
+        content: 'Основная часть'

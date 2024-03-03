@@ -14,4 +14,7 @@ RSpec.configure do |config|
 
   # Includes method - t
   config.include ActionView::Helpers::TranslationHelper
+
+  # Include translation helper [spec/support/translation_helper.rb]
+  config.include TranslationHelper
 end

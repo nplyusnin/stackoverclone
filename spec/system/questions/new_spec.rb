@@ -13,8 +13,8 @@ describe "questions#new" do
 
     context "when params are valid" do
       before do
-        fill_in "Title", with: "The new question"
-        fill_in "Content", with: "The content on new question"
+        fill_in t_input(:question, :title), with: "The new question"
+        fill_in t_input(:question, :content), with: "The content on new question"
         click_on t("questions.ask_question")
       end
 
@@ -26,8 +26,8 @@ describe "questions#new" do
 
     context "when params are invalid" do
       before do
-        fill_in "Title", with: " "
-        fill_in "Content", with: " "
+        fill_in t_input(:question, :title), with: " "
+        fill_in t_input(:question, :content), with: " "
         click_on t("questions.ask_question")
       end
 

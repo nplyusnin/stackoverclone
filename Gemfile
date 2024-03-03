@@ -52,6 +52,9 @@ gem "dry-initializer"
 # Localization rails [https://github.com/svenfuchs/rails-i18n]
 gem "rails-i18n"
 
+# Simple and beautiful form [https://github.com/heartcombo/simple_form]
+gem "simple_form"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
