@@ -15,7 +15,7 @@ describe "questions#new" do
       before do
         fill_in "Title", with: "The new question"
         fill_in "Content", with: "The content on new question"
-        click_on "Ask"
+        click_on t("questions.ask_question")
       end
 
       it "redirects to questions path and renders new question title on page" do
@@ -28,11 +28,11 @@ describe "questions#new" do
       before do
         fill_in "Title", with: " "
         fill_in "Content", with: " "
-        click_on "Ask"
+        click_on t("questions.ask_question")
       end
 
       it "render validation error" do
-        expect(page).to have_content("can't be blank")
+        expect(page).to have_content("не может быть пустым")
       end
     end
   end

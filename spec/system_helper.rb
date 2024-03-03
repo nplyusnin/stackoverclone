@@ -9,5 +9,9 @@ RSpec.configure do |config|
     driven_by :selenium_chrome_headless
   end
 
+  # Includes devise helpers methods - sign_in, sign_out, etc...
   config.include Devise::Test::IntegrationHelpers, type: :system
+
+  # Includes method - t
+  config.include ActionView::Helpers::TranslationHelper
 end

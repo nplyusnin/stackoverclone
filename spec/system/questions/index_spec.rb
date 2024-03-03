@@ -35,21 +35,21 @@ describe "questions#index" do
     end
 
     it "renders new question link" do
-      expect(page).to have_link("Ask")
+      expect(page).to have_link(t("questions.ask_question"))
     end
 
     it "renders actions links only for owned questions" do
       questions.each do |question|
         within "#question_#{question.id}" do
-          expect(page).to have_no_link("Edit")
-          expect(page).to have_no_link("Destroy")
+          expect(page).to have_no_link(t("edit"))
+          expect(page).to have_no_link(t("destroy"))
         end
       end
 
       user_questions.each do |question|
         within "#question_#{question.id}" do
-          expect(page).to have_link("Edit")
-          expect(page).to have_link("Destroy")
+          expect(page).to have_link(t("edit"))
+          expect(page).to have_link(t("destroy"))
         end
       end
     end

@@ -27,5 +27,7 @@
 #       "yes": yup
 #       enabled: "ON"
 
-en:
-  hello: "Hello world"
+ru:
+  edit: 'Редактировать'
+  destroy: 'Удалить'
+  save: 'Сохранить'

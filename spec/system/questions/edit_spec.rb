@@ -15,7 +15,7 @@ describe "questions#edit" do
     context "when user update question with valid params" do
       before do
         fill_in "Title", with: "New question title"
-        click_on "Update"
+        click_on t("save")
       end
 
       it "redirects to questions path and renders new question title on page" do
@@ -27,11 +27,11 @@ describe "questions#edit" do
     context "when user update question with invalid params" do
       before do
         fill_in "Title", with: " "
-        click_on "Update"
+        click_on t("save")
       end
 
       it "renders validation error" do
-        expect(page).to have_content("can't be blank")
+        expect(page).to have_content("не может быть пустым")
       end
     end
   end

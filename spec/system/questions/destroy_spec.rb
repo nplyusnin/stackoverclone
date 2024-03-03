@@ -14,7 +14,7 @@ describe "questions#destroy" do
 
       within "#question_#{question_to_be_deleted.id}" do
         accept_alert do
-          click_on "Destroy"
+          click_on t("destroy")
         end
       end
     end
