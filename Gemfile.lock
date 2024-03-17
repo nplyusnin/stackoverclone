@@ -279,6 +279,8 @@ GEM
       language_server-protocol (~> 3.17.0)
       prism (>= 0.22.0, < 0.25)
       sorbet-runtime (>= 0.5.10782)
+    ruby-lsp-rspec (0.1.10)
+      ruby-lsp (~> 0.14.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.18.1)
@@ -355,6 +357,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   ruby-lsp
+  ruby-lsp-rspec
   selenium-webdriver
   shoulda-matchers
   simple_form

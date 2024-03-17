@@ -92,8 +92,11 @@ group :development do
   # (capybara dependency)
   gem "selenium-webdriver", require: false
 
-  # Ruby-lsp
+  # Ruby-lsp - Ruby language server protocol
   gem "ruby-lsp", require: false
+
+  # Ruby-lps plugin for rspec
+  gem "ruby-lsp-rspec", require: false
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
