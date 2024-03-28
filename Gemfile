@@ -103,6 +103,10 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Deploying
+  # See https://kamal-deploy.org/
+  gem "kamal"
 end
 
 group :test do
