@@ -1,0 +1,21 @@
+image: nplyusnin/stackoverclone-production
+
+servers:
+  - 82.97.241.8
+
+labels:
+  traefik.http.routers.stackoverclone.rule: Host(`stackoverclone-production.plyusnin.dev`)
+
+env:
+  clear:
+    DATABASE_URL: postgresql://postgres:postgres@82.97.241.8/stackoverclone_production
+  secret:
+    - RAILS_MASTER_KEY
+
+builder:
+  args:
+    RUBY_VERSION: 3.3.0
+
+accessories:
+  db:
+    host: 82.97.241.8
